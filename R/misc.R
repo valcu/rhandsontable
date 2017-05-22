@@ -98,7 +98,8 @@ toR = function(data, changes, params, ...) {
   if (ncol(out) != length(colHeaders))
     colHeaders = genColHeaders(changes, colHeaders)
 
-  if (nrow(out) != length(rowHeaders))
+
+  if (nrow(out) != length(rowHeaders) & !is.null(rowHeaders) )
     rowHeaders = genRowHeaders(changes, rowHeaders)
 
   colnames(out) = colHeaders
